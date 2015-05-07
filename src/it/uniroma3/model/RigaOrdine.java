@@ -14,7 +14,7 @@ import it.uniroma3.model.Prodotto;
 
 @Entity
 @Table(name="Tabella_RigaOrdine")
-@NamedQuery(name = "findAllRigheOrdine", query = "SELECT ol FROM RigaOrdine ol")
+@NamedQuery(name = "findAllRigheOrdine", query = "SELECT r FROM RigaOrdine r")
 public class RigaOrdine {
 
     @Id
@@ -22,10 +22,10 @@ public class RigaOrdine {
     private Long id;
 
     @Column(nullable = false)
-    private Float unitPrice;
+    private Float prezzoUnitario;
 
     @Column(nullable = false)
-    private Integer quantity;
+    private Integer qtaOrdinata;
 
     @ManyToOne
     private Ordine ordine;
@@ -45,20 +45,20 @@ public class RigaOrdine {
 		this.id = id;
 	}
 
-	public Float getUnitPrice() {
-		return unitPrice;
+	public Float getPrezzoUnitario() {
+		return prezzoUnitario;
 	}
 
-	public void setUnitPrice(Float unitPrice) {
-		this.unitPrice = unitPrice;
+	public void setPrezzoUnitario(Float prezzoUnitario) {
+		this.prezzoUnitario = prezzoUnitario;
 	}
 
-	public Integer getQuantity() {
-		return quantity;
+	public Integer getQtaOrdinata() {
+		return qtaOrdinata;
 	}
 
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
+	public void setQtaOrdinata(Integer qtaOrdinata) {
+		this.qtaOrdinata = qtaOrdinata;
 	}
 
 	public Ordine getOrdine() {

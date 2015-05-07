@@ -10,6 +10,10 @@ import javax.persistence.Column;
 @Entity
 @NamedQuery(name = "findAllProdotti", query = "SELECT p FROM Prodotto p")
 public class Prodotto {
+	
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
 	@Column(nullable = false)
 	private String nome;
